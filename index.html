@@ -5,66 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
-  
+
   <title>Frontend Mentor | Interactive card details form</title>
 
 </head>
 <body>
-  <div class="left-bg">
-
+  <div class="left-col">
+    <div class="card card-front">
+      <img src="images/card-logo.svg"> <!-- logo for the card (the 2 circles in top left corner)-->
+      0000 0000 0000 0000
+      Jane Appleseed
+      00/00
+    </div>
+    <div class="card card-back">
+      000
+    </div>   
   </div>
-  <div class="container">
+
+  <div class="right-col">
     <form>
-      <div class="form-box-1">
+      <div class="form-el form-name">
         <label for="name">Cardholder Name</label>
-        <br>
         <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name">  
       </div>
       
-      <div class="form-box-2">
+      <div class="form-el form-number">
         <label for="cardnumber">Card Number</label>
-        <br>
         <input type="number" placeholder="e.g. 1234 5678 9123 0000" id="cardnumber" name="cardnumber">  
       </div>
       
-      <div class="form-box-3">
+      <div class="form-el form-date">
         <label for="expdate">Exp. Date (MM/YY)</label>
-        <br>
-        <input type="number" placeholder="MM" id="expdate" name="expdate" class="exp-date">
-        <input type="number" placeholder="YY" class="exp-date">  
+        <div class="inline">
+          <input type="number" placeholder="MM" id="expdate" name="expdate" class="exp-date">
+          <input type="number" placeholder="YY" class="exp-date">    
+        </div>
       </div>
     
-      <div class="form-box-4">
+      <div class="form-el form-cvc">
         <label for="cvc">CVC</label>
-        <br>
         <input type="number" placeholder="e.g. 123" id="cvc" name="cvc">  
       </div>
       
-      
       <button>Confirm</button>
-    
-
     </form>
 
     <!-- Completed state start -->
     <div class="form-completed">
-      <img src="">
+      <img src="./images/icon-complete.svg">
       <h1>Thank you!</h1>
       <p>We've added your card details</p>
       <button>Continue</button>
     </div>
-        
-
-  </div>
-  <div class="card card-front">
-    <img src="images/card-logo.svg"> <!-- logo for the card (the 2 circles in top left corner)-->
-    0000 0000 0000 0000
-    Jane Appleseed
-    00/00
-  </div>
-  <div class="card card-back">
-    000
   </div>
 
   <div class="attribution">
