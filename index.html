@@ -17,13 +17,22 @@
 <body>
   <div class="left-col">
     <div class="card card-front">
-      <img src="images/card-logo.svg"> <!-- logo for the card (the 2 circles in top left corner)-->
-      0000 0000 0000 0000
-      Jane Appleseed
-      00/00
+      <div class="card-front-container">
+        <img src="images/card-logo.svg"> <!-- logo for the card (the 2 circles in top left corner)-->
+        <div class="card-front-text">
+          <p class="cc-number">0000 0000 0000 0000</p>
+          <div class="inline-text">
+            <small>Jane Appleseed</small>
+            <small class="right">00/00</small>
+          </div>
+        </div>  
+      </div>
     </div>
+
     <div class="card card-back">
-      000
+      <div class="card-back-container">
+        <small class="card-back-text">000</small>
+      </div>
     </div>   
   </div>
 
@@ -66,7 +75,7 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Jordan Patel</a>.
   </div>
 
   <script src="js/script.js"></script>
