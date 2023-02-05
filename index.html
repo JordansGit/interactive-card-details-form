@@ -45,7 +45,8 @@
       
       <div class="form-el form-number">
         <label for="cardnumber">Card Number</label>
-        <input type="number" placeholder="e.g. 1234 5678 9123 0000" id="cardnumber" name="cardnumber">  
+        <input type="number" placeholder="e.g. 1234 5678 9123 0000" id="cardnumber" name="cardnumber">
+        <p class="error">Wrong format, numbers only</p>
       </div>
       
       <div class="form-el form-date">
@@ -54,11 +55,13 @@
           <input type="number" placeholder="MM" id="expdate" name="expdate" class="exp-date">
           <input type="number" placeholder="YY" class="exp-date">    
         </div>
+        <p class="error">Can't be blank</p>
       </div>
     
       <div class="form-el form-cvc">
         <label for="cvc">CVC</label>
-        <input type="number" placeholder="e.g. 123" id="cvc" name="cvc">  
+        <input type="number" placeholder="e.g. 123" id="cvc" name="cvc">
+        <p class="error">Can't be blank</p>
       </div>
       
       <button>Confirm</button>

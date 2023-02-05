@@ -132,6 +132,7 @@ form {
 .form-el {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .form-name {
@@ -175,7 +176,7 @@ input {
   border: 1px solid var(--light-grayish-violet);
   box-sizing: border-box; /* so the input box width stays inside the parent element */ 
   width: 100%;
-  margin: 7px 0 30px 0;
+  margin: 7px 0 0 0;
   border-radius: 8px;
   padding: 10px 20px;
   color: var(--very-dark-violet);
@@ -238,6 +239,25 @@ h1 {
 }
 
 
+
+/* Active States */ 
+button:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: 1px solid var(--very-dark-violet);
+}
+
+p.error {
+  color: var(--red); 
+  margin: 7px 0 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  display: none;
+}
+
+
 /* Media Queries */ 
 @media only screen and (max-width: 450px) {
   body {
@@ -247,7 +267,6 @@ h1 {
   }
 
   .right-col {
-    background: grey;
     padding-top: 120px;
     box-sizing: border-box;
   }
@@ -277,7 +296,17 @@ h1 {
 
   p.cc-number {
     /*font-size: 1rem;*/
-    font-size: clamp(0.7rem, 1rem, 2rem); 
+    font-size: clamp(0.61rem, -0.619rem + 6.9vw , 1.11rem);
+    margin-bottom: 5%;
+
+    /* 
+    min font: 11px, 0.61rem 
+    max font: 20px, 1.11rem 
+    widths: 320px - 450px widths, 17.77rem - 25rem 
+    slope: (1.11rem - 0.61 rem) / (25rem - 17.77rem) = 0.5 / 7.23 = 0.069
+    yAxisIntersection: -17.77 * slope + 0.61 = -0.619
+    preferredValue: -0.619rem + 6.9vw 
+    */ 
   }
 
   small {
@@ -307,3 +336,8 @@ h1 {
   }
 
 }
+
+/* to do: 
+active states / error
+js 
+*/ 
