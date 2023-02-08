@@ -37,31 +37,32 @@
   </div>
 
   <div class="right-col">
-    <form>
+    <form name="myForm"">
       <div class="form-el form-name">
         <label for="name">Cardholder Name</label>
-        <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name">  
+        <input type="text" placeholder="e.g. Jane Appleseed" name="name">
+        <p class="error-msg" id="name-error-msg"></p>  
       </div>
       
       <div class="form-el form-number">
         <label for="cardnumber">Card Number</label>
-        <input type="number" placeholder="e.g. 1234 5678 9123 0000" id="cardnumber" name="cardnumber">
-        <p class="error">Wrong format, numbers only</p>
+        <input type="text" placeholder="e.g. 1234 5678 9123 0000" name="cardnumber">
+        <p class="error-msg" id="cardno-error-msg"></p>
       </div>
       
       <div class="form-el form-date">
         <label for="expdate">Exp. Date (MM/YY)</label>
         <div class="inline">
-          <input type="number" placeholder="MM" id="expdate" name="expdate" class="exp-date">
-          <input type="number" placeholder="YY" class="exp-date">    
+          <input type="number" placeholder="MM" id="expdateMM" name="expdate" class="exp-date">
+          <input type="number" placeholder="YY" id="expdateYY" class="exp-date">    
         </div>
-        <p class="error">Can't be blank</p>
+        <p class="error-msg" id="date-error-msg"></p>
       </div>
     
       <div class="form-el form-cvc">
         <label for="cvc">CVC</label>
-        <input type="number" placeholder="e.g. 123" id="cvc" name="cvc">
-        <p class="error">Can't be blank</p>
+        <input type="number" placeholder="e.g. 123" name="cvc">
+        <p class="error-msg" id="cvc-error-msg"></p>
       </div>
       
       <button>Confirm</button>

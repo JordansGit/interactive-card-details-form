@@ -249,17 +249,17 @@ input:focus {
   outline: 1px solid var(--very-dark-violet);
 }
 
-p.error {
+p.error-msg {
   color: var(--red); 
   margin: 7px 0 0 0;
   font-size: 12px;
   font-weight: 500;
-  display: none;
 }
 
 
 /* Media Queries */ 
-@media only screen and (max-width: 450px) {
+/* Mobile */ 
+@media only screen and (max-width: 500px) {
   body {
     grid-template-columns: 100%;
     grid-template-rows: 250px calc(100% - 250px);
@@ -282,7 +282,7 @@ p.error {
     width: 80%;
   }
   .card-front {
-    top: 140px;
+    top: 32vw;
     left: 20px;
     padding: 20px 25px; 
     z-index: 2;
@@ -334,10 +334,10 @@ p.error {
   input {
     padding: 10px 12px;
   }
-
 }
 
-/* to do: 
-active states / error
-js 
-*/ 
+/* Tablet / desktop */ 
+@media only screen and (min-width: 450px) and (max-width: 1400px) {
+
+
+}
