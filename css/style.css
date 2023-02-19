@@ -28,21 +28,30 @@ body {
 .left-col {
   background: url(../images/bg-main-desktop.png);
   background-size: cover;
+  position: relative;
 }
 
 .right-col {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 7em;
 }
 
 
 
 /* CREDIT CARDS */ 
-.card {
+.card-container {
   position: absolute;
+  top: 22%;
+  right: -15%;
+}
+
+.card {
   border-radius: 10px;
-  width: 470px;
+  max-width: 470px;
+  width: 110%;
+  /*width: clamp(425px, 100%, 470px);*/ 
   aspect-ratio: 47 / 24;
   box-sizing: border-box;
 }
@@ -50,16 +59,13 @@ body {
 .card-front {
   background: url(../images/bg-card-front.png);
   background-size: cover;
-  top: 22%;
-  left: 10%;
   padding: 1.66rem 1.944rem; /* 30px 35px, you divide by 18 for rem because root font size is 18, not 16 */ 
 }
 
 .card-back {
   background: url(../images/bg-card-back.png);
   background-size: cover;
-  top: 52%;
-  left: 15%;
+  margin: 40px 0 0 80px;
   padding: 0;
 
 }
@@ -69,10 +75,17 @@ p {
 }
 
 p.cc-number {
-  font-size: 28px;
+  /* font-size: 1.5rem; */ 
   letter-spacing: 3px;
   word-spacing: 6px;
-  margin: 25px 0;
+
+  /* 1.125rem(18px) @ 48rem(768px) increasing to 1.55rem(28px) @ 87.5rem(1400px) */
+  font-size: clamp(1rem, calc(1rem + ((1vw - 0.48rem) * 1.5823)), 1.55rem);
+
+}
+
+:root {
+  /* Where: 1.5823 = 100 * font-size_difference / viewport_width_difference */
 }
 
 
@@ -110,6 +123,7 @@ small {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .inline-text {
@@ -257,42 +271,84 @@ p.error-msg {
 }
 
 
+
+
+
 /* Media Queries */ 
-/* Mobile */ 
-@media only screen and (max-width: 500px) {
+
+/* Tablet */ 
+@media only screen and (max-width: 950px) {
   body {
     grid-template-columns: 100%;
     grid-template-rows: 250px calc(100% - 250px);
     gap: 0;
   }
 
-  .right-col {
-    padding-top: 120px;
-    box-sizing: border-box;
-  }
-
   .left-col {
     background: url(../images/bg-main-mobile.png);
     background-size: cover;
     position: relative;
-    height: 250px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .right-col {
+    padding-left: unset;
+    align-items: flex-start;
+    padding-top: 120px;
+    box-sizing: border-box;
+  }
+
+  .card-container {
+    top: unset;
+    right: unset;
+    position: relative;
+    width: 526px;
   }
 
   .card {
-    width: 80%;
+    max-width: 400px;
+    width: 80vw;
   }
+
   .card-front {
-    top: 32vw;
+    position: absolute;
+    top: 105px; 
     left: 20px;
     padding: 20px 25px; 
     z-index: 2;
   }
 
   .card-back {
+    position: absolute;
     top: 30px;
     right: 20px;
     left: unset;
+    margin: 0;
   }
+
+}
+
+/* Mobile */ 
+@media only screen and (max-width: 525px) {
+  .left-col {
+    margin: unset;
+    display: unset;
+  }
+
+  .right-col {
+    padding-top: calc(50px + 20vw);
+  }
+
+  .card-container {
+    width: unset;
+  }
+
+  .card-front {
+    top: clamp(125px, 32vw, 150px);
+  }
+
 
   p.cc-number {
     /*font-size: 1rem;*/
@@ -317,9 +373,6 @@ p.error-msg {
     width: 50px;
   }
 
-  .right-col {
-    align-items: flex-start;
-  }
 
   form {
     max-width: 380px;
@@ -336,8 +389,5 @@ p.error-msg {
   }
 }
 
-/* Tablet / desktop */ 
-@media only screen and (min-width: 450px) and (max-width: 1400px) {
 
 
-}
